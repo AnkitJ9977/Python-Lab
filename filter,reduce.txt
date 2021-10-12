@@ -1,0 +1,31 @@
+>>> # Without using lambdas
+>>> def starts_with_A(s):
+...     return s[0] == "A"
+...
+>>> fruit = ["Apple", "Banana", "Pear", "Apricot", "Orange"]
+>>> filter_object = filter(starts_with_A, fruit)
+>>> print(list(filter_object))
+['Apple', 'Apricot']
+
+>>> fruit = ["Apple", "Banana", "Pear", "Apricot", "Orange"]
+>>> filter_object = filter(lambda s: s[0] == "A", fruit)
+>>> print(list(filter_object))
+['Apple', 'Apricot']
+    
+     # Without using lambdas
+>>> from functools import reduce
+>>>
+>>> def add(x, y):
+...     return x + y
+...
+>>> list = [2, 4, 7, 3]
+>>> print(reduce(add, list))
+16
+>>> from functools import reduce
+>>>
+>>> list = [2, 4, 7, 3]
+>>> print(reduce(lambda x, y: x + y, list))
+16
+>>> print("With an initial value: " + str(reduce(lambda x, y: x + y, list, 10)))
+With an initial value: 26
+>>>
